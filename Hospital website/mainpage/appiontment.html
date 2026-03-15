@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeCare Hospital - Appointment</title>
+
+<style>
+
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== BODY ===== */
+body{
+    background: url("img1.png") no-repeat center/cover;
+    min-height:100vh;
+}
+
+/* Overlay */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:-1;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-img{
+    width:40px;
+}
+
+.logo-text{
+    font-size:22px;
+    font-weight:bold;
+    color:#1f3c88;
+}
+
+/* NAV LINKS */
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#1f3c88;
+}
+
+/* ===== HAMBURGER ===== */
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* ===== FORM CONTAINER ===== */
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 15px;
+}
+
+/* ===== CARD ===== */
+.card{
+    background:white;
+    width:100%;
+    max-width:420px;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.card h2{
+    text-align:center;
+    color:#1f3c88;
+    margin-bottom:20px;
+}
+
+/* ===== FORM ===== */
+.form-group{
+    margin-bottom:15px;
+}
+
+label{
+    font-weight:600;
+    display:block;
+    margin-bottom:5px;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:14px;
+}
+
+/* Buttons */
+.btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.btn-submit{
+    background:#1f3c88;
+    color:white;
+}
+
+.btn-submit:hover{
+    background:#162d6b;
+}
+
+.btn-reset{
+    background:#ccc;
+}
+
+.btn-reset:hover{
+    background:#999;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:white;
+        width:100%;
+        flex-direction:column;
+        align-items:left;
+        gap:15px;
+        padding:20px 0;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .navbar{
+        padding:15px 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+    <div class="logo-section">
+        <img src="logo.png" class="logo-img">
+        <span class="logo-text">LifeCare Hospital</span>
+    </div>
+</header>
+
+<!-- ===== FORM ===== -->
+<div class="container">
+    <div class="card">
+        <h2>Book Appointment</h2>
+
+        <form>
+
+            <div class="form-group">
+                <label>Patient Name</label>
+                <input type="text" placeholder="Enter full name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" min="1" max="120" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="tel" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+
+            <div class="form-group">
+                <label>Select Speciality</label>
+                <select required>
+                    <option value="">-- Select department --</option>
+                    <option>General Medicine</option>
+                    <option>Cardiology</option>
+                    <option>Neurology</option>
+                    <option>Orthopedics</option>
+                    <option>Dermatology</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Select Doctor</label>
+                <select required>
+                    <option value="">-- Select Doctor --</option>
+                    <option>Dr. Sharma</option>
+                    <option>Dr. Reddy</option>
+                    <option>Dr. Patel</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Appointment Date</label>
+                <input type="date" required>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Confirm Appointment</button>
+            <button type="reset" class="btn btn-reset">Clear</button>
+
+        </form>
+    </div>
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelector("form").onsubmit = function(e){
+    e.preventDefault();
+    alert("Appointment booked successfully!");
+    window.location.href = "profile.page.html";
+};
+</script>
+
+</body>
+</html>

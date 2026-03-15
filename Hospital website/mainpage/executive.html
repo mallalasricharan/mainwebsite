@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeCare Hospital - Advanced Health Check</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { margin:0; font-family: Arial, sans-serif; }
+
+/* Navbar */
+.navbar { box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+.nav-links { list-style:none; display:flex; gap:15px; padding:0; margin:0; }
+.nav-links a { text-decoration:none; color:#333; padding:6px 10px; transition:0.3s; }
+.nav-links a:hover { color:#007bff; }
+
+header { text-align: center; margin-bottom: 30px;margin-top:50px; }
+header h1 { font-size: 28px; color: #007bff; margin-bottom: 5px; }
+header p { font-size: 16px; color: #555; }
+
+/* Health Package Table */
+table { width:100%; border-collapse:collapse; margin:30px auto; max-width:100%; }
+th, td { border:1px solid #ddd; padding:8px; text-align:center; }
+th { background:#007bff; color:white; }
+tr:nth-child(even) { background:#f2f2f2; }
+.book-link { display:inline-block; padding:6px 12px; background:#28a745; color:white; text-decoration:none; border-radius:5px; }
+.book-link:hover { background:#1e7e34; }
+
+footer { text-align: center; margin-top: 30px; font-size: 14px; color: #555; }
+
+/* Responsive */
+@media(max-width:900px){ table{font-size:14px;} }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand d-flex align-items-center" href="#"><img src="logo.png" style="height:50px;" class="me-2">LifeCare Hospital</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse justify-content-end" id="nav"></div>
+  </div>
+</nav>
+
+<header>
+  <h1>Advanced Health Check Package</h1>
+  <p>LifeCare Hospital – Comprehensive Health Assessment</p>
+  <p><strong>Total Tests: 75+</strong></p>
+</header>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sr. No.</th>
+      <th>Test Name</th>
+      <th>Approx. Cost (₹)</th>
+      <th>Book</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- General Health -->
+    <tr><td>1</td><td>Complete Blood Count (CBC)</td><td>250</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>2</td><td>Hemoglobin</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>3</td><td>Hematocrit</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>4</td><td>RBC Count</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>5</td><td>WBC Count</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>6</td><td>Platelet Count</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>7</td><td>ESR (Erythrocyte Sedimentation Rate)</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>8</td><td>Blood Group & Rh Typing</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>9</td><td>Random Blood Sugar</td><td>120</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>10</td><td>Fasting Blood Sugar</td><td>120</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>11</td><td>Postprandial Blood Sugar</td><td>120</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>12</td><td>HbA1c</td><td>250</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>13</td><td>Kidney Function Test (Creatinine, Urea, Uric Acid)</td><td>450</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>14</td><td>Liver Function Test (SGOT, SGPT, Bilirubin, ALP, GGT)</td><td>750</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>15</td><td>Serum Electrolytes (Na, K, Cl, Ca)</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+
+    <!-- Heart / Cardiac -->
+    <tr><td>16</td><td>ECG</td><td>250</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>17</td><td>Echocardiogram (2D-Echo)</td><td>1200</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>18</td><td>Stress Test / TMT</td><td>1500</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>19</td><td>Troponin I</td><td>500</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>20</td><td>CK-MB</td><td>500</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>21</td><td>Lipid Profile (Cholesterol, HDL, LDL, Triglycerides)</td><td>800</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>22</td><td>Homocysteine</td><td>600</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>23</td><td>hs-CRP</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>24</td><td>NT-proBNP</td><td>700</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>25</td><td>Blood Pressure Check</td><td>100</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+
+    <!-- Lung / Respiratory -->
+    <tr><td>26</td><td>Chest X-Ray PA View</td><td>300</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>27</td><td>Pulmonary Function Test (Spirometry)</td><td>300</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>28</td><td>Oxygen Saturation (SpO2)</td><td>100</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>29</td><td>Arterial Blood Gas (ABG)</td><td>600</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>30</td><td>Sputum Test</td><td>200</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+
+    <!-- Cancer Markers -->
+    <tr><td>31</td><td>PSA (Prostate) - Male</td><td>300</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>32</td><td>CA-125 (Ovarian) - Female</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>33</td><td>CEA (Colorectal & others)</td><td>500</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>34</td><td>AFP (Liver cancer)</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>35</td><td>CA 19-9 (Pancreatic)</td><td>500</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>36</td><td>CA 15-3 (Breast)</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>37</td><td>Thyroglobulin (Thyroid)</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>38</td><td>LDH (Lung and other cancers)</td><td>350</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>39</td><td>Beta-HCG (Germ cell tumors)</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>40</td><td>PAP Smear - Female</td><td>300</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+
+    <!-- Metabolic & Hormonal -->
+    <tr><td>41</td><td>Thyroid Profile (T3, T4, TSH)</td><td>450</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>42</td><td>Vitamin B12</td><td>250</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>43</td><td>Vitamin D</td><td>300</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>44</td><td>Iron Studies (Serum Iron, TIBC, Ferritin)</td><td>450</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>45</td><td>Uric Acid</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>46</td><td>Cortisol</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>47</td><td>Testosterone - Male</td><td>350</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>48</td><td>Estradiol - Female</td><td>350</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>49</td><td>Progesterone - Female</td><td>350</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>50</td><td>Insulin / C-Peptide</td><td>500</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+
+    <!-- Infection / Immunity -->
+    <tr><td>51</td><td>HIV 1 & 2</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>52</td><td>Hepatitis B (HBsAg)</td><td>350</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>53</td><td>Hepatitis C (Anti-HCV)</td><td>350</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>54</td><td>CRP</td><td>200</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>55</td><td>ANA (Antinuclear Antibody)</td><td>250</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+
+    <!-- Bone & Joint -->
+    <tr><td>56</td><td>Serum Calcium</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>57</td><td>Serum Phosphate</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>58</td><td>Vitamin D3</td><td>300</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>59</td><td>Bone Mineral Density (DEXA Scan)</td><td>1200</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>60</td><td>Uric Acid</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+
+    <!-- Eye / Ear / Other -->
+    <tr><td>61</td><td>Vision Test</td><td>200</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>62</td><td>Fundus Examination</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>63</td><td>Hearing Test</td><td>200</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>64</td><td>Dental Check-up</td><td>200</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>65</td><td>Skin Examination</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>66</td><td>Blood Pressure Measurement</td><td>100</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>67</td><td>Body Mass Index (BMI)</td><td>100</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>68</td><td>Serum Amylase</td><td>250</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>69</td><td>Serum Lipase</td><td>250</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+    <tr><td>70</td><td>Lung Function Test (Spirometry)</td><td>300</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+<tr><td>71</td><td>Electrolytes - Bicarbonate (HCO3)</td><td>150</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+<tr><td>72</td><td>Prostate-Specific Antigen (PSA) - Male</td><td>300</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+<tr><td>73</td><td>Pap Smear - Female</td><td>300</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+<tr><td>74</td><td>Abdominal Ultrasound</td><td>400</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+<tr><td>75</td><td>Chest CT Scan (if indicated)</td><td>2000</td><td><a class="book-link" href="book.html">Book</a></td></tr>
+</table>
+</section>
+<footer>
+  <p>LifeCare Hospital – 24/7 Healthcare Services | Contact: +91 9876543210 | info@lifecare.com</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

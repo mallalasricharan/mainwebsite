@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeCare Hospital - Login</title>
+
+<style>
+
+/* ====== GLOBAL ====== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: url("img1.png") no-repeat center center/cover;
+    min-height:100vh;
+}
+
+/* Dark overlay */
+body::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:-1;
+}
+
+/* ====== NAVBAR ====== */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-img{
+    width:40px;
+}
+
+.logo-text{
+    font-size:22px;
+    font-weight:bolder;
+    color:#1f3c88;
+}
+
+/* Nav links */
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.nav-links li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.nav-links li a:hover{
+    color:#1f3c88;
+}
+
+/* Hamburger */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ====== LOGIN CARD ====== */
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    width:350px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    text-align:center;
+}
+
+.card h1{
+    margin-bottom:20px;
+    color:#1f3c88;
+}
+
+label{
+    display:block;
+    text-align:left;
+    margin-top:10px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    font-size:15px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#login{
+    background:#1f3c88;
+    color:white;
+}
+
+#login:hover{
+    background:#163172;
+}
+
+#cancel{
+    background:#ccc;
+}
+
+#cancel:hover{
+    background:#999;
+}
+
+#result{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:768px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:white;
+        flex-direction:column;
+        width:200px;
+        padding:20px;
+        display:none;
+        box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+}
+
+@media(max-width:400px){
+    .card{
+        width:90%;
+        padding:25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo-section">
+        <img src="logo.png" class="logo-img">
+        <span class="logo-text">LifeCare Hospital</span>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+  
+</header>
+
+<div class="container">
+    <div class="card">
+        <h1>Login</h1>
+
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Enter username">
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter password">
+
+        <button id="login">Login</button>
+        <button id="cancel">Cancel</button>
+
+        <h4 id="result"></h4>
+    </div>
+</div>
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+const loginbtn = document.getElementById('login');
+const cancelbtn = document.getElementById('cancel');
+
+let user1 = "admin";
+let pass1 = "123";
+
+loginbtn.onclick = function() {
+    if (username.value === user1 && password.value === pass1) {
+        document.getElementById('result').style.color = "green";
+        document.getElementById('result').textContent = "Login successful!";
+        window.location.href = "profile.page.html";
+    } else {
+        document.getElementById('result').style.color = "red";
+        document.getElementById('result').textContent = "Invalid username or password.";
+    }
+};
+
+cancelbtn.onclick = function(){
+    username.value ="";
+    password.value ="";
+    document.getElementById('result').textContent = "";
+}
+
+</script>
+
+</body>
+</html>

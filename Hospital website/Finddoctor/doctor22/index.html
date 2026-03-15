@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment</title>
+
+<style>
+
+/* ===== GLOBAL ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    margin: 0;
+}
+
+/* ===== CARD CONTAINER ===== */
+.container {
+    width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===== DOCTOR PROFILE ===== */
+.doctor {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.doctor img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 4px solid #4facfe;
+}
+
+.doctor h2 {
+    margin: 10px 0 5px;
+}
+
+.doctor p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* ===== INPUTS ===== */
+.input-group {
+    margin-bottom: 12px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #4facfe;
+    outline: none;
+    box-shadow: 0 0 6px rgba(79,172,254,0.3);
+}
+
+/* ===== SLOT HEADINGS ===== */
+.slots-heading{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:600;
+    text-align:center;
+}
+
+.slots-title{
+    text-align:center;
+    font-size:13px;
+    color:#666;
+}
+
+/* ===== CAROUSEL SLOTS ===== */
+.slots-carousel{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    padding:10px 0;
+    scroll-behavior:smooth;
+}
+
+.slots-carousel::-webkit-scrollbar{
+    height:6px;
+}
+
+.slots-carousel::-webkit-scrollbar-thumb{
+    background:#4facfe;
+    border-radius:10px;
+}
+
+/* ===== SLOT BOX ===== */
+.slot{
+    min-width:90px;
+    padding:10px;
+    border-radius:10px;
+    background:#f1f5f9;
+    text-align:center;
+    cursor:pointer;
+    font-size:13px;
+    transition:0.3s;
+    flex-shrink:0;
+}
+
+.slot:hover{
+    background:#4facfe;
+    color:white;
+}
+
+.slot.active{
+    background:#4facfe;
+    color:white;
+    font-weight:bold;
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== POPUP ===== */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+    background: #fff;
+    padding: 25px;
+    width: 320px;
+    margin: 15% auto;
+    border-radius: 15px;
+    text-align: center;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    from {transform: scale(0.7);}
+    to {transform: scale(1);}
+}
+
+.popup h3 {
+    color: #4facfe;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Doctor Info -->
+    <div class="doctor">
+        <img src="doctor22.jpg">
+        <h2>Dr. Padmaja Lokireddy</h2>
+        <p>Hematology & Bone Marrow Transplant</p>
+    </div>
+
+    <!-- Form -->
+    <form id="appointmentForm">
+
+        <div class="input-group">
+            <input type="text" placeholder="Patient Name" required>
+        </div>
+
+        <div class="input-group">
+            <input type="number" placeholder="Age" required>
+        </div>
+
+        <div class="input-group">
+            <input type="tel" placeholder="Mobile Number" required>
+        </div>
+
+        <div class="input-group">
+            <input type="date" required>
+        </div>
+
+        <h3 class="slots-heading">Available Time Slots</h3>
+        <p class="slots-title">Select Your Preferred Time</p>
+
+        <input type="hidden" id="selectedSlot">
+
+        <!-- Carousel Slots -->
+        <div class="slots-carousel">
+            <div class="slot">09:00 AM</div>
+            <div class="slot">10:00 AM</div>
+            <div class="slot">11:00 AM</div>
+            <div class="slot">12:00 PM</div>
+            <div class="slot">01:00 PM</div>
+            <div class="slot">02:00 PM</div>
+            <div class="slot">04:00 PM</div>
+            <div class="slot">05:00 PM</div>
+            <div class="slot">06:00 PM</div>
+        </div>
+
+        <button type="submit">Confirm Appointment</button>
+
+    </form>
+
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h3>Appointment Confirmed ✅</h3>
+        <p>Our team will contact you shortly.</p>
+        <button onclick="redirectPage()">OK</button>
+    </div>
+</div>
+
+<script>
+
+/* SLOT SELECTION */
+let slots = document.querySelectorAll(".slot");
+let selectedInput = document.getElementById("selectedSlot");
+
+slots.forEach(slot => {
+    slot.addEventListener("click", () => {
+
+        slots.forEach(s => s.classList.remove("active"));
+        slot.classList.add("active");
+
+        selectedInput.value = slot.innerText;
+    });
+});
+
+/* FORM SUBMIT */
+document.getElementById("appointmentForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    if(selectedInput.value === ""){
+        alert("Please select a time slot");
+        return;
+    }
+
+    document.getElementById("popup").style.display = "block";
+});
+
+/* REDIRECT */
+function redirectPage(){
+    window.location.href = "success.html";
+}
+
+</script>
+
+</body>
+</html>

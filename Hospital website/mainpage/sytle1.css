@@ -1,0 +1,232 @@
+ /* ===== Top Bar ===== */
+.top-bar .para {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #001f3f;
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* ===== Navbar ===== */
+.logo-img {
+    height: 50px;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* ===== Carousel ===== */
+.carousel-item {
+    height: 100vh;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ===== Remove gaps ===== */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== About Section ===== */
+#about h1 {
+    text-align: center;
+}
+
+#about p {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Vision box */
+.vision {
+    margin-top: 20px;
+    text-align: center;
+    background: rgb(231, 224, 224);
+    border-radius: 25px;
+    padding: 20px;
+}
+
+/* ===== Departments ===== */
+.departments {
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 0;
+}
+
+.departments h1 {
+    font-size: 32px;
+}
+
+.subtitle {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* ===== Grid ===== */
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ===== Card (UPDATED DESIGN) ===== */
+.card {
+    background: white; /* NEW */
+    border-left: 5px solid #007bff; /* NEW */
+    border-radius: 12px;
+    padding: 25px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== Icon ===== */
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* ===== Title ===== */
+.card h3 {
+    margin: 10px 0;
+}
+
+/* ===== Description ===== */
+.card p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ===== Button ===== */
+.card button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #0056b3;
+}
+
+/* ===== Emergency Section ===== */
+.emergency {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1587745416684-47953f16f02f") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(200, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.content h1 {
+  font-size: 32px;
+}
+
+.content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.call {
+  background: #e0e0e0;
+}
+
+.ambulance {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+
+    .carousel-item {
+        height: 50vh;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links a {
+        width: 100%;
+    }
+}

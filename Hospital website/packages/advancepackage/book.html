@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Health Test - LifeCare Hospital</title>
+<style>
+/* ====== RESET ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ====== BODY ====== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ====== HEADING ====== */
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* ====== FORM STYLING ====== */
+form {
+    width: 100%;
+    max-width: 700px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+form input, 
+form textarea, 
+form input[list] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+/* ====== BUTTON ====== */
+form button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #1e7e34;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem; }
+    form { padding: 25px; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    form { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<h1>Book Your Health Test</h1>
+
+<form action="submit_booking.html" method="get">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="notes">Additional Notes</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="Any special instructions or health concerns"></textarea>
+
+    <button type="submit">Book Test</button>
+</form>
+
+</body>
+</html>

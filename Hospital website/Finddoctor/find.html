@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctors</title>
+
+<style>
+
+/* ====== RESET ====== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ====== BODY ====== */
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: url("img1.png") no-repeat center center/cover;
+    min-height:100vh;
+    position:relative;
+}
+
+/* Dark overlay */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:-1;
+}
+
+/* ====== NAVBAR ====== */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-img{
+    width:40px;
+}
+
+.logo-text{
+    font-size:22px;
+    font-weight:bold;
+    color:#1f3c88;
+}
+
+/* Nav links */
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.nav-links li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+}
+
+/* Hamburger */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ====== TITLE ====== */
+.title{
+    text-align:center;
+    color:white;
+    margin:30px 10px;
+    font-size:28px;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom:40px;
+}
+
+/* ====== GRID ====== */
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* ====== CARD ====== */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    object-position:center top;
+    display:block;
+}
+.card-body {
+    padding: 18px;
+}
+
+.degree {
+    color: gray;
+    font-size: 14px;
+    margin-bottom:8px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.tag {
+    background: #ddd;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.green {
+    background: #28a745;
+    color: #fff;
+}
+
+/* Timing highlight */
+.time {
+    font-weight: bold;
+    color: #0d8f4f;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+    border: none;
+    background: #0d8f4f;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0b7a43;
+}
+
+/* ====== RESPONSIVE ====== */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .doctor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar{
+        padding:15px 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .doctor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:white;
+        flex-direction:column;
+        width:200px;
+        padding:20px;
+        gap:15px;
+        display:none;
+        box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .title{
+        font-size:22px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo-section">
+        <img src="photos/logo.png" class="logo-img">
+        <span class="logo-text">LifeCare Hospital</span>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+</header>
+
+<h1 class="title">Find Our Specialist Doctors</h1>
+
+<div class="container">
+    <div class="doctor-grid">
+
+        <!-- Doctor 1 -->
+        <div class="card"> 
+            <img src="photos/doctor1.jpg">
+            <div class="card-body">
+                <h3>Dr A Sreenivas Kumar</h3>
+                <p class="degree">MBBS, MD(Gen Med), DM(Cardio)SGPGI, FACC(USA)</p>
+
+                <div class="info"><span>Experience:</span><span>25+ Years </span></div>
+                <div class="info"><span>Timing:</span><span class="time">09:00 -17:30 • Mon - Sat</span></div>
+                <div class="info"><span>Specialization:</span><span class="tag">Heart Specialist</span></div>
+                <div class="info"><span>Department:</span><span class="tag green">Cardiology</span></div>
+               <button><a href="doctor1/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button>
+            </div>
+        </div>
+        <!-- Doctor 2 -->
+        <div class="card">
+            <img src="photos/doctor2.png">
+            <div class="card-body">
+                <h3>Dr. Alluri Raja Gopala Raju</h3>
+                <p class="degree">MBBS, MD, DM, FICA</p>
+
+                <div class="info"><span>Experience:</span><span>58 Years</span></div>
+                <div class="info"><span>Timing:</span><span class="time">11:00 AM - 7:00 PM •  MON - THU</span></div>
+
+                <div class="info"><span>Specialization:</span><span class="tag">Heart Specialist</span></div>
+                <div class="info"><span>Department:</span><span class="tag green">Cardiology</span></div>
+
+                <button><a href="doctor2/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button>
+            </div>
+        </div>
+        
+
+        <!-- Doctor 3 -->
+        <div class="card">
+            <img src="photos/doctor3.jpg">
+            <div class="card-body">
+                <h3>Dr Arun Srinivas</h3>
+                <p class="degree">MBBS, MD, DM (Cardiology), FESC, FACC, FPVI, FCI, FPC</p>
+
+                <div class="info"><span>Experience:</span><span>37+ Years</span></div>
+                <div class="info"><span>Timing:</span><span class="time">11:00 - 18:00  •  MON - THU</span></div>
+
+                <div class="info"><span>Specialization:</span><span class="tag">Heart Specialist</span></div>
+                <div class="info"><span>Department:</span><span class="tag green">Cardiology</span></div>
+
+                  <button><a href="doctor3/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button>
+            </div>
+        </div>
+             <!-- Doctor 4 -->
+<div class="card"><img src="photos/doctor4.jpg"><div class="card-body"><h3>Dr Subhashini Prabhakar</h3><p class="degree">MBBS; MD (Internal Medicine); MNAMS (Neurology)</p><div class="info"><span>Experience:</span><span>46+ Years</span></div><div class="info"><span>Timing:</span><span class="time">11:30 -13:45  •  Mon - Sat</span></div><div class="info"><span>Specialization:</span><span class="tag">Brain Specialist</span></div><div class="info"><span>Department:</span><span class="tag green">Neurology</span></div><button><a href="doctor4/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<div class="card"><img src="photos/doctor5.jpg"><div class="card-body"><h3>Dr Sudhir Kumar</h3><p class="degree">MBBS; MD (Internal Medicine); DM (Neurology)</p><div class="info"><span>Experience:</span><span>26+ Years</span></div><div class="info"><span>Timing:</span><span class="time">09:00 -17:30  •  Mon - Sat</span></div><div class="info"><span>Specialization:</span><span class="tag">Brain Specialist</span></div><div class="info"><span>Department:</span><span class="tag green">Neurology</span></div>        <button><a href="doctor5/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<div class="card"><img src="photos/doctor6.jpg"><div class="card-body"><h3>Dr B G Ratnam</h3><p class="degree">MBBS, Mch(Neurosurgery)</p><div class="info"><span>Experience:</span><span>25+ Years</span></div><div class="info"><span>Timing:</span><span class="time">
+11:00 - 20:00  •  Mon - Sat</span></div><div class="info"><span>Specialization:</span><span class="tag">Neurosurgery</span></div><div class="info"><span>Department:</span><span class="tag green">Neurology</span></div>        <button><a href="doctor 6/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 7 -->
+<div class="card"><img src="photos/doctor7.jpg"><div class="card-body"><h3>Dr. Jairam Chandra Pingle</h3><p class="degree">MBBS; MS (Ortho); FRCS</p><div class="info"><span>Experience:</span><span>50+ Years</span></div><div class="info"><span>Timing:</span><span class="time">09:30 -12:30  •  Mon - Sat</span></div><div class="info"><span>Specialization:</span><span class="tag">Bones Specialist</span></div><div class="info"><span>Department:</span><span class="tag green">Orthopedics</span></div><button><a href="doctor7/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 8 -->
+<div class="card"><img src="photos/doctor8.jpg"><div class="card-body"><h3>Dr. K J Reddy</h3><p class="degree">MBBS; MS(PGI); DNB; FRCS(ENG); FRCS(Ed),FRCS (Orth)</p><div class="info"><span>Experience:</span><span>34+ Years</span></div><div class="info"><span>Timing:</span><span class="time">10:30-17:00  • Mon-Sat</Mon-Sat></span></div><div class="info"><span>Specialization:</span><span class="tag">Bones Specialist</span></div><div class="info"><span>Department:</span><span class="tag green">Orthopedics</span></div><button><a href="doctor8/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 9 -->
+<div class="card"><img src="photos/doctor9.jpg"><div class="card-body"><h3>Dr Kiran Varma Uddaraju</h3><p class="degree">MBBS, MS(Orthopaedics)</p><div class="info"><span>Experience:</span><span>10+ Years</span></div><div class="info"><span>Timing:</span><span class="time">09:00 -17:30  •  Mon - Sat</span></div><div class="info"><span>Specialization:</span><span class="tag">Bones Specialist</span></div><div class="info"><span>Department:</span><span class="tag green">Orthopedics</span></div><button><a href="doctor9/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+   <!-- Doctor 10 -->
+<div class="card"><img src="photos/doctor10.png"><div class="card-body"><h3>Dr B Ramesh</h3><p class="degree">MBBS, MD</p><div class="info"><span>Experience:</span><span>25+ Years</span></div><div class="info"><span>Timing:</span><span class="time">10:00 AM - 6:00 PM  •  Mon - Sat </span></div><div class="info"><span>Specialization:</span><span class="tag"> Fever, Diabetes</span></div><div class="info"><span>Department:</span><span class="tag green"> General Medicine</span></div><button><a href="doctor10/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 11 -->
+<div class="card"><img src="photos/doctor11.jpg"><div class="card-body"><h3>Dr. Sandhya Gurubasappa</h3><p class="degree">MBBS, MD</p><div class="info"><span>Experience:</span><span>30+ Years</span></div><div class="info"><span>Timing:</span><span class="time">9:30 AM – 5:30 PM •  Mon – Fri</span></div><div class="info"><span>Specialization:</span><span class="tag">Preventive Medicine, Lifestyle Diseases, Hypertension</span></div><div class="info"><span>Department:</span><span class="tag green">Internal Medicine / General Medicine</span></div><button><a href="doctor11/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 12 -->
+<div class="card"><img src="photos/doctor11.jpg"><div class="card-body"><h3>Dr. Sandhya Gurubasappa</h3><p class="degree">MBBS, MD</p><div class="info"><span>Experience:</span><span>30+ Years</span></div><div class="info"><span>Timing:</span><span class="time">9:30 AM – 5:30 PM •  Mon – Fri</span></div><div class="info"><span>Specialization:</span><span class="tag">Preventive Medicine, Lifestyle Diseases, Hypertension</span></div><div class="info"><span>Department:</span><span class="tag green">Internal Medicine / General Medicine</span></div><button><a href="doctor12/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+<div class="card"><img src="photos/doctor12.jpg"><div class="card-body"><h3>Dr. Syed Athar Hussain</h3><p class="degree">MBBS, MD</p><div class="info"><span>Experience:</span><span>30+ Years</span></div><div class="info"><span>Timing:</span><span class="time">11:00 AM – 7:00 PM •  Mon – Sat</span></div><div class="info"><span>Specialization:</span><span class="tag">General Health Checkups, Diabetes</span></div><div class="info"><span>Department:</span><span class="tag green">General Medicine</span></div><button><a href="doctor13/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 13 -->
+<div class="card"><img src="photos/doctor13.jpg"><div class="card-body"><h3>Dr. T. Rajeshwari Reddy</h3><p class="degree">MBBS, MS (Obstetrics & Gynaecology), DES (Germany), FAMS (New Delhi)</p><div class="info"><span>Experience:</span><span>25+ Years</span></div><div class="info"><span>Timing:</span><span class="time">10:00 AM – 7:00 PM (Mon–Sat)</span></div><div class="info"><span>Specialization:</span><span class="tag">High-Risk Pregnancy & Gynecological Endoscopy</span></div><div class="info"><span>Department:</span><span class="tag green">Obstetrics & Gynecology</span></div><button><a href="doctor14/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 14 -->
+<div class="card"><img src="photos/doctor14.jpg"><div class="card-body"><h3>Dr. Vindhya Tirumala Reddy</h3><p class="degree">MBBS, DGO, MD, FICOG</p><div class="info"><span>Experience:</span><span>29+ Years</span></div><div class="info"><span>Timing:</span><span class="time">10:00 AM – 4:00 PM (Mon–Sat)</span></div><div class="info"><span>Specialization:</span><span class="tag">High-Risk Pregnancy, Infertility Treatment, Laparoscopic Gynecological Surgery</span></div><div class="info"><span>Department:</span><span class="tag green">Gynecology</span></div><button><a href="doctor15/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 15 -->
+<div class="card"><img src="photos/doctor15.jpg"><div class="card-body"><h3>Dr. Neelima Kanth T</h3><p class="degree">MBBS, MS (OBG), FMAS, FSUI</p><div class="info"><span>Experience:</span><span>23+ Years</span></div><div class="info"><span>Timing:</span><span class="time">0:00 AM – 3:00 PM (Mon–Sat)</span></div><div class="info"><span>Specialization:</span><span class="tag">Laparoscopic Surgery, Robotic</span></div><div class="info"><span>Department:</span><span class="tag green">gynocology </span></div><button><a href="doctor16/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 16 -->
+<div class="card"><img src="photos/doctor16.jpg"><div class="card-body"><h3>Dr. Sharmila Pendyala</h3><p class="degree">MBBS, MD (Pediatrics)</p><div class="info"><span>Experience:</span><span>23+ Years</span></div><div class="info"><span>Timing:</span><span class="time">2:30 PM – 8:00 PM (Mon–Sat)</span></div><div class="info"><span>Specialization:</span><span class="tag">Child Development, Immunization, Newborn Care, Adolescent Pediatrics</span></div><div class="info"><span>Department:</span><span class="tag green">Pediatrics</span></div><button><a href="doctor17/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 17 -->
+<div class="card"><img src="photos/doctor17.jpg"><div class="card-body"><h3>Dr. Vishnuvardhan Reddy</h3><p class="degree">MBBS, DCH, DNB (Pediatrics), MRCPCH</p><div class="info"><span>Experience:</span><span>20+ Years</span></div><div class="info"><span>Timing:</span><span class="time">2:30 PM – 4:00 PM (Fri & OPD hours vary)</span></div><div class="info"><span>Specialization:</span><span class="tag">Neonatal Care, Infant Nutrition, Developmental Assessments, Newborn Screening</span></div><div class="info"><span>Department:</span><span class="tag green">Pediatric</span></div><button><a href="doctor18/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 18 -->
+<div class="card"><img src="photos/doctor18.jpg"><div class="card-body"><h3>Dr. Koteshwar Rao</h3><p class="degree">MD (Pediatrics), MD (Neonatology)</p><div class="info"><span>Experience:</span><span>32+ Years</span></div><div class="info"><span>Timing:</span><span class="time">2:00 PM – 5:00 PM (Mon–Sat)</span></div><div class="info"><span>Specialization:</span><span class="tag">Neonatology, High-Risk Newborn Care, Pediatric Intensive Care
+Department: Pediatrics & Neonatology</span></div><div class="info"><span>Department:</span><span class="tag green">Pediatrics</span></div><button><a href="doctor 6/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 19 -->
+<div class="card"><img src="photos/doctor19.jpg"><div class="card-body"><h3>Dr. Kalpana Bali</h3><p class="degree">MBBS, MD (Pulmonary Medicine)</p><div class="info"><span>Experience:</span><span>20+ Years</span></div><div class="info"><span>Timing:</span><span class="time">10:00 AM – 2:00 PM (Mon–Sat)</span></div><div class="info"><span>Specialization:</span><span class="tag">Asthma Treatment, COPD, Bronchoscopy, Lung Infections</span></div><div class="info"><span>Department:</span>Pulmonology / Respiratory Medicine<span class="tag green"></span></div><button><a href="doctor19/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 20 -->
+<div class="card"><img src="photos/doctor20.jpg"><div class="card-body"><h3>Dr. Pradyut Waghray</h3><p class="degree">MBBS, MD (Chest), FRCP, FCCP</p><div class="info"><span>Experience:</span><span>35+ Years</span></div><div class="info"><span>Timing:</span><span class="time">10:00 AM – 4:00 PM (Mon–Sat)</span></div><div class="info"><span>Specialization:</span><span class="tag">Asthma, Tuberculosis (TB), COPD, Bronchoscopy</span></div><div class="info"><span>Department:</span><span class="tag green">Pulmonology / Respiratory Medicine</span></div><button><a href="doctor20/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 21 -->
+<div class="card"><img src="photos/doctor21.jpg"><div class="card-body"><h3>Dr. Sai Praveen Haranath</h3><p class="degree">MBBS, Pulmonary & Critical Care (USA Board Certified)</p><div class="info"><span>Experience:</span><span>24+ Years</span></div><div class="info"><span>Timing:</span><span class="time">11:00 AM – 3:00 PM (Mon–Sat)</span></div><div class="info"><span>Specialization:</span><span class="tag">Pulmonary & Critical Care, Asthma, COPD, Lung Diseases</span></div><div class="info"><span>Department:</span><span class="tag green">Pulmonology / Respiratory Medicine</span></div><button><a href="doctor21/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+<!-- Doctor 22 -->
+<div class="card"><img src="photos/doctor22.jpg"><div class="card-body"><h3>. Dr. Padmaja Lokireddy</h3><p class="degree">MBBS, MD (General Medicine), MRCP (UK), FRCPath</p><div class="info"><span>Experience:</span><span>26+ Years</span></div><div class="info"><span>Timing:</span><span class="time">0:00 AM – 2:00 PM (Mon–Sat)</span></div><div class="info"><span>Specialization:</span><span class="tag">Blood Disorders, Leukemia, Bone Marrow Transplant, Hemato-Oncology</span></div><div class="info"><span>Department:</span><span class="tag green">Hematology & Bone Marrow Transplant</span></div><button><a href="doctor22/index.html" style="color:white; text-decoration:none; display:block;">📅 Book Appointment</a></button></div></div>
+
+    </div>
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.getElementById("goBtn").addEventListener("click", function() {
+    window.location.href = "find.html";
+});
+</script>
+
+</body>
+</html>
